@@ -1,0 +1,15 @@
+E:\Projects\CurrencyPartfolioApi\BL\bin\Debug\net6.0\BL.deps.json
+E:\Projects\CurrencyPartfolioApi\BL\bin\Debug\net6.0\BL.dll
+E:\Projects\CurrencyPartfolioApi\BL\bin\Debug\net6.0\BL.pdb
+E:\Projects\CurrencyPartfolioApi\BL\bin\Debug\net6.0\DAL.dll
+E:\Projects\CurrencyPartfolioApi\BL\bin\Debug\net6.0\DAL.pdb
+E:\Projects\CurrencyPartfolioApi\BL\obj\Debug\net6.0\BL.csproj.AssemblyReference.cache
+E:\Projects\CurrencyPartfolioApi\BL\obj\Debug\net6.0\BL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\CurrencyPartfolioApi\BL\obj\Debug\net6.0\BL.AssemblyInfoInputs.cache
+E:\Projects\CurrencyPartfolioApi\BL\obj\Debug\net6.0\BL.AssemblyInfo.cs
+E:\Projects\CurrencyPartfolioApi\BL\obj\Debug\net6.0\BL.csproj.CoreCompileInputs.cache
+E:\Projects\CurrencyPartfolioApi\BL\obj\Debug\net6.0\BL.csproj.CopyComplete
+E:\Projects\CurrencyPartfolioApi\BL\obj\Debug\net6.0\BL.dll
+E:\Projects\CurrencyPartfolioApi\BL\obj\Debug\net6.0\refint\BL.dll
+E:\Projects\CurrencyPartfolioApi\BL\obj\Debug\net6.0\BL.pdb
+E:\Projects\CurrencyPartfolioApi\BL\obj\Debug\net6.0\ref\BL.dll

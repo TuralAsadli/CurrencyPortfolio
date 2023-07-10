@@ -1,0 +1,12 @@
+E:\Projects\CurrencyPartfolioApi\DAL\bin\Debug\net6.0\DAL.deps.json
+E:\Projects\CurrencyPartfolioApi\DAL\bin\Debug\net6.0\DAL.dll
+E:\Projects\CurrencyPartfolioApi\DAL\bin\Debug\net6.0\DAL.pdb
+E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\DAL.dll
+E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\refint\DAL.dll
+E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\DAL.pdb
+E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\ref\DAL.dll
