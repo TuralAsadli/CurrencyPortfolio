@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repository
 {
-    internal class BaseRepository<T> : IBaseRepository<T> where T : BaseItem
+    public class BaseRepository<T> : IBaseRepository<T> where T : BaseItem
     {
         AppDbContext _context;
         DbSet<T> _dbSet;

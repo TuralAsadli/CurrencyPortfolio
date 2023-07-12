@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BL.Utilities.PasswordHelper
 {
-    internal class PasswordHelper
+    public class PasswordHelper
     {
         public static void HashPassword(string password, out byte[] passwordHash, out byte[] passwordSlat)
         {

@@ -9,7 +9,7 @@ namespace BL.Utilities.CurrencyApi
     public class StockApi
     {
         private static string url = "https://api.stockdata.org/v1/data/quote?symbols=";
-        private static string token = "&api_token=";
+        private static string token = "&api_token=akqeQLgNyK9to6rPnTPasbN8Td18yTSAW5o65Kd3";
 
         public static async Task<string> GetStockInfo(string stockname)
         {
@@ -21,5 +21,7 @@ namespace BL.Utilities.CurrencyApi
             }
             return responseBody;
         }
+
+        
     }
 }

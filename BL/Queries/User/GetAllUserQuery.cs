@@ -1,4 +1,4 @@
-﻿using BL.DTOs.User;
+﻿using BL.DTOs.UserDTOs;
 using MediatR;
 
 namespace BL.Queries.Users

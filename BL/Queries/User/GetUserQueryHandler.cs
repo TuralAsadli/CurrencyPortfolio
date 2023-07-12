@@ -1,22 +1,17 @@
 ﻿using AutoMapper;
-using BL.DTOs.User;
+using BL.DTOs.UserDTOs;
 using DAL.Abstraction;
-using DAL.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UserEntity = DAL.Entities.User;
 
 namespace BL.Queries.Users
 {
     internal class GetUserQueryHandler : IRequestHandler<GetUserQuery, UserDTO>
     {
-        private readonly IBaseRepository<User> _repository;
+        private readonly IBaseRepository<UserEntity> _repository;
         private readonly IMapper _mapper;
 
-        public GetUserQueryHandler(IBaseRepository<User> repository, IMapper mapper)
+        public GetUserQueryHandler(IBaseRepository<UserEntity> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
