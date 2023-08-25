@@ -1,13 +1,11 @@
-﻿using BL.Commands.Users;
+﻿using AutoMapper;
+using BL.Commands.Users;
 using BL.DTOs;
 using BL.DTOs.UserDTOs;
 using BL.Queries.User;
-using BL.Queries.Users;
 using BL.Utilities.PasswordHelper;
 using CurrencyPortfolio.Utilites.JwtToken;
 using CurrencyPortfolio.Utilites.Validators.User;
-using DAL.Abstraction;
-using DAL.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,42 +15,39 @@ namespace CurrencyPortfolio.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        
+
         IConfiguration _configuration;
         UserValidator _validator;
         IMediator _mediator;
+        IMapper _mapper;
 
-        public AccountController(IConfiguration configuration, IMediator mediator)
+        public AccountController(IConfiguration configuration, IMediator mediator, IMapper mapper)
         {
-           
+
             _configuration = configuration;
             _validator = new UserValidator();
             _mediator = mediator;
+            _mapper = mapper;
         }
 
         [HttpPost("Registration")]
-        public async Task<IActionResult> Registration([FromForm] CreateUserDTO userDto)
+        public async Task<IActionResult> Registration(CreateUserDTO userDto)
         {
             var validationRes = _validator.Validate(userDto);
             if (validationRes.IsValid)
             {
 
-                if (await _mediator.Send(new GetUserByEmailQuery() { Email = userDto.Email}) == null)
+                if (await _mediator.Send(new GetUserByEmailQuery() { Email = userDto.Email }) == null)
                 {
-                    CreateUserCommand userCommand = new CreateUserCommand()
-                    {
-                        UserName = userDto.UserName,
-                        Email = userDto.Email,
-                        Password = userDto.Email,
-                        CondirmPassword = userDto.CondirmPassword
-                    };
 
-                    await _mediator.Send(userCommand);
+                    var user = _mapper.Map<CreateUserCommand>(userDto);
+
+                    await _mediator.Send(user);
 
                     return Ok();
                 }
 
-                return BadRequest(new ErrorDTO() { ErrorMessage = "this email is already taken", PropertyName = "Email" });
+                return BadRequest(new ErrorDTO() { ErrorMessage = "This email is already taken", PropertyName = "Email" });
 
             }
             List<ErrorDTO> errorDtos = new List<ErrorDTO>();
@@ -68,24 +63,25 @@ namespace CurrencyPortfolio.Controllers
             return BadRequest(errorDtos);
         }
 
-
-        public async Task<IActionResult> Login([FromBody] LogInUserDTO user)
+        [HttpPost("LogIn")]
+        public async Task<IActionResult> LogIn(LogInUserDTO user)
         {
-            var User = await _mediator.Send(new GetUserByNameQuery() { UserName = user.UserName});
+            var User = await _mediator.Send(new GetUserByNameQuery() { UserName = user.UserName });
 
             if (User == null)
             {
-                return Unauthorized();
+                return Unauthorized("Incorrect UserName or Password");
             }
 
             if (!PasswordHelper.VerifyPassword(user.Password, User.HashPassword, User.SlatPassword))
             {
-                return Unauthorized();
+                return Unauthorized("Incorrect UserName or Password");
             }
 
 
             var token = JwtTokenHelper.CreateToken(User, _configuration);
-            return Ok(token);
+
+            return Ok(new TokenDTO() { Token = token, UserId = User.Id, UserName = User.UserName});
         }
     }
 }

@@ -8,10 +8,10 @@ namespace BL.Queries.Users
 {
     internal class GetUserQueryHandler : IRequestHandler<GetUserQuery, UserDTO>
     {
-        private readonly IBaseRepository<UserEntity> _repository;
+        private readonly IUserRepository _repository;
         private readonly IMapper _mapper;
 
-        public GetUserQueryHandler(IBaseRepository<UserEntity> repository, IMapper mapper)
+        public GetUserQueryHandler(IUserRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

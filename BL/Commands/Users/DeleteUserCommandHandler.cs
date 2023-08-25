@@ -7,10 +7,10 @@ namespace BL.Commands.Users
 {
     public class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommand>
     {
-        private IBaseRepository<User> _repository;
+        private IUserRepository _repository;
         private IMapper _mapper;
 
-        public DeleteUserCommandHandler(IBaseRepository<User> repository, IMapper mapper)
+        public DeleteUserCommandHandler(IUserRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

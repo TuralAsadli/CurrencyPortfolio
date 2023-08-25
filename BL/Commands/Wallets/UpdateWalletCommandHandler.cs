@@ -1,16 +1,17 @@
 ﻿using AutoMapper;
 using DAL.Abstraction;
 using DAL.Entities;
+using DAL.Repository;
 using MediatR;
 
 namespace BL.Commands.Wallets
 {
     public class UpdateWalletCommandHandler : IRequestHandler<UpdateWalletCommand>
     {
-        IBaseRepository<Wallet> _repository;
+        IWalletRepository _repository;
         IMapper _mapper;
 
-        public UpdateWalletCommandHandler(IBaseRepository<Wallet> repository, IMapper mapper)
+        public UpdateWalletCommandHandler(IWalletRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

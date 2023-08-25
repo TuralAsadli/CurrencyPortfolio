@@ -7,10 +7,10 @@ namespace BL.Commands.WalletItems
 {
     public class DeleteWalletItemCommandHandler : IRequestHandler<DeleteWalletItemCommand>
     {
-        IBaseRepository<WalletItem> _repository;
+        IWalletItemRepository _repository;
         IMapper _mapper;
 
-        public DeleteWalletItemCommandHandler(IMapper mapper, IBaseRepository<WalletItem> repository)
+        public DeleteWalletItemCommandHandler(IMapper mapper, IWalletItemRepository repository)
         {
             _mapper = mapper;
             _repository = repository;

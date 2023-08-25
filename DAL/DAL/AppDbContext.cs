@@ -13,6 +13,7 @@ namespace DAL.DAL
         public DbSet<Currency> Currencies { get; set; }
         public DbSet<Wallet> Wallets { get; set; }
         public DbSet<WalletItem> WalletItems { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
     }
 }

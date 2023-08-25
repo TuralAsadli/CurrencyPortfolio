@@ -11,6 +11,7 @@ namespace DAL.Entities
     {
         public float BuyPrice { get; set; }
         public float Amount { get; set; }
+        public string Type { get; set; }
         public string CurrencyName { get; set; }
         public string CurrencyCode { get; set; }
         public string IconPath { get; set; }

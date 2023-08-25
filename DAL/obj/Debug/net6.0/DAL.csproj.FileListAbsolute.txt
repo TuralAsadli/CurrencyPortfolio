@@ -10,3 +10,5 @@ E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\DAL.dll
 E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\refint\DAL.dll
 E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\DAL.pdb
 E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\ref\DAL.dll
+E:\Projects\CurrencyPartfolioApi\DAL\bin\Debug\net6.0\DAL.runtimeconfig.json
+E:\Projects\CurrencyPartfolioApi\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache

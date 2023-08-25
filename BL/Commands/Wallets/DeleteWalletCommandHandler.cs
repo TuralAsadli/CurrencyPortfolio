@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DAL.Abstraction;
 using DAL.Entities;
+using DAL.Repository;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,10 @@ namespace BL.Commands.Wallets
 {
     public class DeleteWalletCommandHandler : IRequestHandler<DeleteWalletCommand>
     {
-        IBaseRepository<WalletItem> _repository;
+        IWalletRepository _repository;
         IMapper _mapper;
 
-        public DeleteWalletCommandHandler(IBaseRepository<WalletItem> repository, IMapper mapper)
+        public DeleteWalletCommandHandler(IWalletRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

@@ -3,15 +3,16 @@ using BL.DTOs.UserDTOs;
 using DAL.Abstraction;
 using UserEntity = DAL.Entities.User;
 using MediatR;
+using DAL.Repository;
 
 namespace BL.Queries.Users
 {
     internal class GetAllUserQueryHandler : IRequestHandler<GetAllUserQuery, IEnumerable<UserDTO>>
     {
-        private readonly IBaseRepository<UserEntity> _repository;
+        private readonly IUserRepository _repository;
         private readonly IMapper _mapper;
 
-        public GetAllUserQueryHandler(IBaseRepository<UserEntity> repository, IMapper mapper)
+        public GetAllUserQueryHandler(IUserRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

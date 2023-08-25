@@ -2,6 +2,7 @@
 using BL.DTOs.Wallet;
 using DAL.Abstraction;
 using DAL.Entities;
+using DAL.Repository;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,10 @@ namespace BL.Queries.Wallets
 {
     internal class GetAllWalletQueryHandler : IRequestHandler<GetAllWalletQuery, IEnumerable<WalletDTO>>
     {
-        private readonly IBaseRepository<Wallet> _repository;
+        private readonly IWalletRepository _repository;
         private readonly IMapper _mapper;
 
-        public GetAllWalletQueryHandler(IBaseRepository<Wallet> repository, IMapper mapper)
+        public GetAllWalletQueryHandler(IWalletRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

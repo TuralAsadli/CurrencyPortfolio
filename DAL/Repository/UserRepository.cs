@@ -29,5 +29,12 @@ namespace DAL.Repository
             var res = await _context.Users.FirstOrDefaultAsync(u => u.UserName == userName);
             return res;
         }
+
+        public new async Task Create(User item)
+        {
+            item.Wallet = new Wallet();
+            await _context.Users.AddAsync(item);
+            await Save();
+        }
     }
 }

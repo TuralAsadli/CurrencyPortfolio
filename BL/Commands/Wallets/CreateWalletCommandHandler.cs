@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DAL.Abstraction;
 using DAL.Entities;
+using DAL.Repository;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,10 @@ namespace BL.Commands.Wallets
 {
     public class CreateWalletCommandHandler : IRequestHandler<CreateWalletCommand>
     {
-        IBaseRepository<Wallet> _repository;
+        IWalletRepository _repository;
         IMapper _mapper;
 
-        public CreateWalletCommandHandler(IBaseRepository<Wallet> repository, IMapper mapper)
+        public CreateWalletCommandHandler(IWalletRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -23,6 +24,7 @@ namespace BL.Commands.Wallets
 
         public async Task<Unit> Handle(CreateWalletCommand request, CancellationToken cancellationToken)
         {
+           
             var wallet = _mapper.Map<Wallet>(request);
             await _repository.Create(wallet);
             return Unit.Value;

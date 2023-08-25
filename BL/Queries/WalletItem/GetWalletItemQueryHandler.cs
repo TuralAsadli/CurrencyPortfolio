@@ -13,10 +13,10 @@ namespace BL.Queries.WalletItems
 {
     public class GetWalletItemQueryHandler : IRequestHandler<GetWalletItemQuery, WalletItemDTO>
     {
-        private readonly IBaseRepository<WalletItem> _repository;
+        private readonly IWalletItemRepository _repository;
         private readonly IMapper _mapper;
 
-        public GetWalletItemQueryHandler(IBaseRepository<WalletItem> repository, IMapper mapper)
+        public GetWalletItemQueryHandler(IWalletItemRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

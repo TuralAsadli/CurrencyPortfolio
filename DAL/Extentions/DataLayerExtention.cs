@@ -19,10 +19,11 @@ namespace DAL.Extentions
         {
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<IBaseRepository<User>, BaseRepository<User>>();
-            services.AddScoped<IBaseRepository<Wallet>, BaseRepository<Wallet>>();
-            services.AddScoped<IBaseRepository<WalletItem>, BaseRepository<WalletItem>>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IWalletRepository, WalletRepository>();
+            services.AddScoped<IWalletItemRepository, WalletItemRepository>();
             services.AddScoped<IBaseRepository<Currency>, BaseRepository<Currency>>();
+            services.AddScoped<IBaseRepository<Transaction>, BaseRepository<Transaction>>();
 
             return services;
         }

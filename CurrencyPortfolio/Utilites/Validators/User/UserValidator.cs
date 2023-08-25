@@ -23,7 +23,7 @@ namespace CurrencyPortfolio.Utilites.Validators.User
                     .Matches(@"[a-z]+").WithMessage("Your password must contain at least one lowercase letter.")
                     .Matches(@"[0-9]+").WithMessage("Your password must contain at least one number.");
 
-            RuleFor(cp => cp.CondirmPassword).Equal(cp => cp.Password).WithMessage("Password mismatch");
+            RuleFor(cp => cp.ConfirmPassword).Equal(cp => cp.Password).WithMessage("Password mismatch");
         }
     }
 }

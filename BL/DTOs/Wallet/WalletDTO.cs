@@ -1,4 +1,5 @@
-﻿using DAL.Entities;
+﻿using BL.DTOs.Transaction;
+using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,8 @@ namespace BL.DTOs.Wallet
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
-        public DAL.Entities.User User { get; set; }
 
         public IEnumerable<WalletItem> WalletItems { get; set; }
+        public IEnumerable<TransactionDTO> Transaction { get; set; }
     }
 }

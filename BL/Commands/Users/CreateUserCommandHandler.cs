@@ -8,10 +8,10 @@ namespace BL.Commands.Users
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand>
     {
-        private IBaseRepository<User> _repository;
+        private IUserRepository _repository;
         private IMapper _mapper;
 
-        public CreateUserCommandHandler(IBaseRepository<User> repository, IMapper mapper)
+        public CreateUserCommandHandler(IUserRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

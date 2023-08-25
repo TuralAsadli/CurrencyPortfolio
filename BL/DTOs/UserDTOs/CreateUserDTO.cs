@@ -12,6 +12,6 @@ namespace BL.DTOs.UserDTOs
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public string CondirmPassword { get; set; }
+        public string ConfirmPassword { get; set; }
     }
 }
