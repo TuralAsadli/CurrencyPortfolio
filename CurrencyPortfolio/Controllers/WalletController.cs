@@ -1,4 +1,5 @@
 ﻿using BL.Commands.WalletItems;
+using BL.Commands.Wallets;
 using BL.DTOs;
 using BL.Queries.Wallet;
 using BL.Queries.Wallets;
@@ -97,5 +98,14 @@ namespace CurrencyPortfolio.Controllers
             var transactions = await _mediator.Send(new GetWalletTransactionsQuery() { UserId = userId });
             return Ok(transactions);
         }
+
+        [HttpDelete("DeleteTransaction")]
+        public async Task<IActionResult> DeleteTransaction(Guid transactionId)
+        {
+            await _mediator.Send(new DeleteTransactionCommand() { Id = transactionId });
+            return Ok();
+        }
+
+
     }
 }

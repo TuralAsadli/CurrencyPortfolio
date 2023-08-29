@@ -36,5 +36,25 @@ namespace BL.Utilities.Apis
 
             return responseContent;
         }
+
+        public static async Task<CryptoList> SearchCrypto(string cryptoname)
+        {
+            string url = domain + "assets";
+            CryptoList responseContent = null;
+
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    var list = JsonConvert.DeserializeObject<CryptoList>(await response.Content.ReadAsStringAsync());
+                    responseContent.data = list.data.Where(x => x.name.Contains(cryptoname)).ToList();
+                    responseContent.timestamp = list.timestamp;
+                    return responseContent;
+                    
+                }
+            }
+            return responseContent;
+        }
     }
 }
