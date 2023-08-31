@@ -2,16 +2,20 @@
 using BL.Commands.Wallets;
 using BL.DTOs;
 using BL.Queries.Wallet;
+using BL.Queries.WalletItem;
 using BL.Queries.Wallets;
 using BL.Utilities.Calculetors;
 using CurrencyPortfolio.Utilites.Validators.Wallet;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace CurrencyPortfolio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class WalletController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -71,6 +75,17 @@ namespace CurrencyPortfolio.Controllers
             }
 
             await _mediator.Send(walletItem);
+            var WalleItem = await _mediator.Send(new GetWalletItemWithNameQuery() { Name = walletItem.CurrencyName });
+            await _mediator.Send(new AddTransactionCommand()
+            {
+                walletItemId = WalleItem.Id,
+                AddedBalance = walletItem.Amount * walletItem.BuyPrice,
+                buyPrice = walletItem.BuyPrice,
+                ItemName = walletItem.CurrencyName,
+                Date = DateTime.UtcNow,
+            }
+            );
+
             return Ok();
         }
 
