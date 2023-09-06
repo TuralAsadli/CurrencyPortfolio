@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-5 col-sm-6">
+            <div class="p-4 d-flex flex-column purple-bg-color round-corner">
+                <span class="text-uppercase font-10 weight-600 white-color-2">Balance Details</span>
+                <span id="fullBalance" class="font-28 weight-700 white-color mt-4">$0</span>
+                <span class="font-12 weight-300 white-color-2">3.235323 BTC</span>
+                <div class="d-flex flex-row justify-content-between mt-4">
+                    <div class="d-flex flex-column">
+                        <span id="recivedBalance" class="font-16 weight-600 white-color">$0</span>
+                        <span class="font-12 weight-300 white-color-2">Recived</span>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <span id="profit" class="font-16 weight-600 white-color">$0</span>
+                        <span class="font-12 weight-300 white-color-2">Profit</span>
+                    </div>
+                </div>
+                <div class="d-flex flex-row mt-4">
+                    <button class="flex-grow-1 me-1 py-2 text-uppercase font-12 weight-700 purple-color-2 grey-bg-color">Receive</button>
+                    <button class="flex-grow-1 ms-1 py-2 text-uppercase font-12 weight-700 white-color orange-bg-color">Send</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="py-3">
+                <span class="text-uppercase font-10 weight-600 grey-color-2">Fees</span>
+                <div class="d-flex flex-column round-corner grey-bg-color ps-4 py-3 mt-3 mb-4">
+                    <span id="profitInPercentages" class="font-30 purple-color-2">0.069%</span>
+                    <span class="text-uppercase font-14 purple-color-2">Marker</span>
+                </div>
+                <div class="d-flex flex-column round-corner grey-bg-color ps-4 py-3 ">
+                    <span id="bestScoreInPercentages" class="font-30 purple-color-2">0.085%</span>
+                    <span id="bestAssetName" class="text-uppercase font-14 purple-color-2">Taker</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="pt-3">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase font-10 weight-600 grey-color-2">Recomendations</th>
+                            <th class="text-end text-uppercase font-10 weight-600 purple-color-2">View All</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="recomendation-item">
+                            <td>
+                                <div class="d-flex flex-row">
+                                    <div class="d-flex flex-row justify-content-center align-items-center square round-corner-small font-20 light-orange-bg-color orange-color">
+                                        <i class="fab fa-bitcoin"></i>
+                                    </div>
+                                    <div class="d-flex flex-column ps-2">
+                                        <span class="font-14 weight-700 purple-color-2" id="crypto">BTE</span>
+                                        <span class="font-10 weight-400 purple-color-2" id="cryptoName">Bitcoin</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column align-items-end">
+                                    <span class="font-14 weight-700 purple-color-2" id="cryptoprice">64%</span>
+                                    <span class="font-10 weight-400 purple-color-2" id="cryptoProfite">-1.7%</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="recomendation-item">
+                            <td>
+                                <div class="d-flex flex-row ">
+                                    <div class="d-flex flex-row justify-content-center align-items-center square round-corner-small light-yellow-bg-color yellow-color font-20 ">
+                                        <i class="fab fa-bitcoin"></i>
+                                    </div>
+                                    <div class="d-flex flex-column ps-2 ">
+                                        <span class="font-14 weight-700 purple-color-2 " id="crypto">DAI</span>
+                                        <span class="font-10 weight-400 purple-color-2 " id="cryptoName">Dai</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column align-items-end ">
+                                    <span class="font-14 weight-700 purple-color-2 " id="cryptoprice">54%</span>
+                                    <span class="font-10 weight-400 purple-color-2 " id="cryptoProfite">7.4%</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="recomendation-item">
+                            <td>
+                                <div class="d-flex flex-row ">
+                                    <div class="d-flex flex-row justify-content-center align-items-center square round-corner-small light-teal-bg-color teal-color font-20 ">
+                                        <i class="fab fa-bitcoin"></i>
+                                    </div>
+                                    <div class="d-flex flex-column ps-2 ">
+                                        <span class="font-14 weight-700 purple-color-2 " id="crypto">XRP</span>
+                                        <span class="font-10 weight-400 purple-color-2 " id="cryptoName">Ripple</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column align-items-end ">
+                                    <span class="font-14 weight-700 purple-color-2 " id="cryptoprice">13%</span>
+                                    <span class="font-10 weight-400 purple-color-2 " id="cryptoProfite">-4.6%</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="recomendation-item">
+                            <td>
+                                <div class="d-flex flex-row ">
+                                    <div class="d-flex flex-row justify-content-center align-items-center square round-corner-small light-green-bg-color green-color font-20 ">
+                                        <i class="fab fa-bitcoin"></i>
+                                    </div>
+                                    <div class="d-flex flex-column ps-2 ">
+                                        <span class="font-14 weight-700 purple-color-2 " id="crypto">USDT</span>
+                                        <span class="font-10 weight-400 purple-color-2 " id="cryptoName">Tether</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column align-items-end ">
+                                    <span class="font-14 weight-700 purple-color-2 " id="cryptoprice">34%</span>
+                                    <span class="font-10 weight-400 purple-color-2 " id="cryptoProfite">7.5%</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/CryptoWebApp/js/mainStatistics.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>

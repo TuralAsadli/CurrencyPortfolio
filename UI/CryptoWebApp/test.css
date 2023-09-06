@@ -1,0 +1,26 @@
+.modal {
+    display: none; /* Hide the modal by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    max-width: 400px;
+    margin: 100px auto; /* Center the modal on the screen */
+    max-height: 80%;
+    overflow-y: auto; 
+  }
+  
+  .close {
+    float: right;
+    cursor: pointer;
+  }
+  
+  /* Add more styles as needed */
+  
