@@ -1,6 +1,8 @@
 # Crypto Portfolio Tracker Web App - Readme
 
-![App Screenshot](screenshot.png)
+<img src="screenshot.png" alt="App Screenshot" style="width:800px;height:480px;">
+
+
 
 Welcome to the Crypto Portfolio Tracker web app! This application allows users to manage and track their cryptocurrency investments with a user-friendly interface. Similar to a stock portfolio tracker, this app is tailored for the world of cryptocurrencies, helping users monitor their holdings, track profits and losses, and stay updated on market trends. Below is a guide to help you understand and set up the app.
 
