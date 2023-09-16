@@ -8,6 +8,7 @@ using CurrencyPortfolio.Utilites.JwtToken;
 using CurrencyPortfolio.Utilites.Validators.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace CurrencyPortfolio.Controllers
 {
@@ -80,6 +81,8 @@ namespace CurrencyPortfolio.Controllers
 
 
             var token = JwtTokenHelper.CreateToken(User, _configuration);
+
+            Log.Information($"{User.UserName} is logged", user);
 
             return Ok(new TokenDTO() { Token = token, UserId = User.Id, UserName = User.UserName});
         }
